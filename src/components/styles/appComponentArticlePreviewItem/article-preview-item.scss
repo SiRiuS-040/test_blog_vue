@@ -1,0 +1,49 @@
+.article-preview-item {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  background: var(--white);
+
+  &:hover {
+    filter: drop-shadow(0px 4px 10px lightgray);
+    transition: 0.1s;
+  }
+
+  &__preview-image {
+    background: lightgray 50% / cover no-repeat;
+    object-fit: contain;
+    height: 320px;
+    width: auto;
+
+  }
+
+  &__title {
+    margin-top: 20px;
+
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 30px;
+
+    overflow: hidden;
+    color: var(--text, #1B1B1B);
+    text-overflow: ellipsis;
+  }
+
+  &__link {
+    margin-top: 30px;
+    display: inline-flex;
+    padding: 10px 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+
+    color: var(--white, #FFFFFF);
+    border-radius: 2px;
+    background: var(--text, #1B1B1B);
+
+  }
+}

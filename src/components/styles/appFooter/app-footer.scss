@@ -1,35 +1,53 @@
 .app-footer {
-  background-color: var(--passionate-blueberry);
-  color: var(--distant-horizon);
-  padding-bottom: 20px;
+  border-top: 1px solid var(--footer-border-color, #8D959C);
 
-  &__logo-link {
+  &__top {
+    padding: 50px 0 70px;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 42px;
-    width: 220px;
-    line-height: 0;
-    text-align: center;
-    color: white;
-    text-transform: uppercase;
-    background: var(--red-radish);
+    justify-content: space-between;
   }
 
-  &__section {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    grid-template-columns: auto 1fr auto;
+  &__desc {
+    margin-top: 20px;
+    max-width: 426px;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    color: var(--footer-text-color, #8D959C);
+  }
+
+  &__contacts {
+    min-width: 360px;
+  }
+
+  &__bottom {
+
   }
 }
 
-.company-info {
-  &__address {
-    text-align: center;
+.blog-contacts {
+  &__mail-title {
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--footer-text-color, #8D959C);
   }
 
-  &__phone {
-    text-align: right;
+  &__mail {
+    font-family: Ubuntu , sans-serif;
+    font-size: 18px;
+    line-height: 22px;
+    color: var(--text, #1B1B1B);
+  }
+
+  &__socials {
+    margin-top: 24px;
+  }
+}
+
+.blog-contacts-socials {
+  &__list {
+    display: flex;
+    gap: 20px;
   }
 }

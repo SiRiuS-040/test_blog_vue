@@ -1,6 +1,8 @@
 <template>
-    <main class="app-main container">
-        <slot name="mainContent"></slot>
+    <main class="app-main">
+        <div class="app-main__content container">
+            <slot name="mainContent"></slot>
+        </div>
     </main>
 </template>
 

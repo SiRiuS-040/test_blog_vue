@@ -3,17 +3,18 @@
         <AppHeader />
         <AppMain>
             <template #mainContent>
-                <div class="app-Home">
-                    <div class="app-main__title-wrapper">
-                        <h2 class="app-main__title">Главная страница</h2>
-                        <p class="app-main__description">
-                            Добро пожаловать в наш замечательный онлайн-магазин
-                        </p>
-                    </div>
-                </div>
+                <section class="home-section articles">
+                    <AppComponentArticlePreview
+                        class="articles__list"
+                    />
+
+                    {{ form.icon }}
+                    {{ form.method }}
+
+                </section>
             </template>
         </AppMain>
-        <AppFooter />
+        <AppFooter/>
     </div>
 </template>
 
@@ -21,6 +22,11 @@
 import AppHeader from "./AppHeader.vue";
 import AppMain from "./AppMain.vue";
 import AppFooter from "./AppFooter.vue";
+import AppComponentArticlePreview from "./AppComponentArticlePreview.vue";
+
+import { ref } from "vue"
+
+import BrewMethodsAPI from '../components/api/resources/BrewMethods.js';
 
 export default {
     name: "PageHome",
@@ -28,6 +34,41 @@ export default {
         AppHeader,
         AppMain,
         AppFooter,
+        AppComponentArticlePreview,
+    },
+
+    setup( ){
+        const pagePath = '/';
+        const brewMethods = ref({});
+        const loadBrewMethods = async() => {
+            brewMethods.value = await BrewMethodsAPI.index( pagePath );
+        };
+
+        const form = {
+            method: '',
+            icon: ''
+        };
+
+        loadBrewMethods()
+
+        console.log(brewMethods)
+
+
+        // const saveBrewMethod = async() => {
+        //     let formData = new FormData();
+        //
+        //     formData.append('method', form.method);
+        //     formData.append('icon', form.icon);
+        //
+        //     await BrewMethodsAPI.store( formData )
+        //
+        // }
+
+        return {
+            brewMethods,
+            loadBrewMethods,
+            form,
+        }
     },
 
 }
