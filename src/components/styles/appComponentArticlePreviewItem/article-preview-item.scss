@@ -13,7 +13,7 @@
 
   &__preview-image {
     background: lightgray 50% / cover no-repeat;
-    object-fit: contain;
+    object-fit: cover;
     height: 320px;
     width: auto;
 

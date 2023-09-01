@@ -1,8 +1,10 @@
 <template>
     <ul class="article-preview">
-        <AppComponentArticlePreviewItem />
-        <AppComponentArticlePreviewItem />
-        <AppComponentArticlePreviewItem />
+        <AppComponentArticlePreviewItem
+            v-for="preview in componentData.data.articles"
+            :key="preview.id"
+            :componentData="preview"
+        />
     </ul>
 </template>
 
@@ -14,6 +16,17 @@ export default {
     name: "AppComponentArticlePreview",
     components: {
         AppComponentArticlePreviewItem,
+    },
+    props: {
+        componentData: {
+            type: Object,
+        }
+    },
+    setup( ){
+
+        return {
+
+        }
     },
 
 }

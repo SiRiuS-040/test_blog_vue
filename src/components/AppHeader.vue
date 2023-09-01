@@ -22,7 +22,7 @@
                         <router-link to="/" class="navigation__link">Главная</router-link>
                     </li>
                     <li class="navigation__item">
-                        <router-link to="/article" class="navigation__link">Статьи</router-link>
+                        <router-link to="/article-3" class="navigation__link">Статьи</router-link>
                     </li>
                 </ul>
             </nav>

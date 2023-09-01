@@ -2,7 +2,7 @@ import { createRouter, createWebHashHistory  } from 'vue-router'
 import ViewHome from '../views/ViewHome.vue'
 // import CatalogView from '../views/CatalogView.vue'
 // import AboutView from '../views/AboutView.vue'
-import SingleItemView from '../views/SingleItemView.vue'
+import ViewArticleItem from '../views/ViewArticleItem.vue'
 import PageArticleItem from '../components/PageArticleItem.vue'
 
 
@@ -16,7 +16,7 @@ const routerOptions = {
     },
     {
       path: '/article',
-      component: SingleItemView,
+      component: ViewArticleItem,
       children: [
         {
           path: '/article-:id',
