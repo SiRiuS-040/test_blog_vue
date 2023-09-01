@@ -1,0 +1,21 @@
+.app-header {
+  &__content {
+    padding: 25px;
+  }
+
+  &__logo-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__navigation {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.navigation {
+  &__list {
+    display: flex;
+  }
+}
