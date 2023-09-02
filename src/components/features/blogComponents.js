@@ -1,9 +1,9 @@
 export const blogComponents = {
     "text_block": "AppArticleTextBlock",
-    "image_block": "AppTest",
-    "slider_block": "AppTest",
-    "subscribe_form_": "AppTest",
-    "cta_form_block": "AppTest",
-    "article_list_block": "AppComponentArticlePreview",
+    "image_block": "AppArticleImageBlock",
+    "slider_block": "AppArticleSliderBlock",
+    "subscribe_form_block": "AppSubscribeFormBlock",
+    "cta_form_block": "AppCtaFormBlock",
+    "article_list_block": "AppArticleListBlock",
     "article_intro_block": "AppArticleIntroBlock",
 }

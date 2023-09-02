@@ -35,7 +35,6 @@ export default {
     },
 
     setup(props) {
-
         const uiButtonClasses = [
             props.buttonType ? `ui-button--${props.buttonType}` : '',
         ]
@@ -48,5 +47,5 @@ export default {
 </script>
 
 <style lang="scss">
-    @import "./styles/uiButton/ui-button.scss";
+    @import "./styles/uiButton/ui-button";
 </style>

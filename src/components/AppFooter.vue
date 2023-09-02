@@ -78,16 +78,13 @@
 
 <script>
 
-// import UiButton from "@/components/UiButton";
 import AppComponentSubscription from "@/components/AppComponentSubscription";
 
 export default {
     name: "AppFooter",
     components: {
-        // UiButton,
         AppComponentSubscription
     },
-
 }
 </script>
 

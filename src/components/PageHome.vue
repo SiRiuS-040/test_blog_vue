@@ -1,7 +1,7 @@
 <template>
     <section
         v-if="isPageDataLoaded"
-        class="articles"
+        class="app-page-home"
     >
         <component
             v-for="componentData in appPageData.body"
@@ -15,30 +15,28 @@
 <script>
 
 import { ref } from "vue"
-import BrewMethodsAPI from '../components/api/resources/BrewMethods.js';
-import AppComponentArticlePreview from "./AppComponentArticlePreview.vue";
 import { blogComponents } from "./features/blogComponents";
+import BrewMethodsAPI from '../components/api/resources/BrewMethods.js';
+import AppArticleListBlock from "./AppArticleListBlock.vue";
 
 export default {
     name: "PageHome",
 
     components: {
-        AppComponentArticlePreview,
+        AppArticleListBlock,
     },
 
     setup( ){
+        const isPageDataLoaded = ref(false)
         const componentName = blogComponents;
-
         const pagePath = '/';
         const appPageData = ref({});
-        const isPageDataLoaded = ref(false)
         const loadBrewMethods = async() => {
             appPageData.value = await BrewMethodsAPI.index( pagePath );
             isPageDataLoaded.value = true;
         };
         loadBrewMethods()
 
-        console.log(appPageData)
         return {
             componentName,
             isPageDataLoaded,
@@ -51,5 +49,5 @@ export default {
 </script>
 
 <style lang="scss">
-    @import "../components/styles/pageHome/page-home";
+    @import "../components/styles/pageHome/app-page-home";
 </style>

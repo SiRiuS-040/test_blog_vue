@@ -1,10 +1,6 @@
 import { createRouter, createWebHashHistory  } from 'vue-router'
 import ViewHome from '../views/ViewHome.vue'
-// import CatalogView from '../views/CatalogView.vue'
-// import AboutView from '../views/AboutView.vue'
 import ViewArticleItem from '../views/ViewArticleItem.vue'
-import PageArticleItem from '../components/PageArticleItem.vue'
-
 
 const routerOptions = {
   history: createWebHashHistory(),
@@ -20,7 +16,7 @@ const routerOptions = {
       children: [
         {
           path: '/article-:id',
-          component: PageArticleItem,
+          component: ViewArticleItem,
           props: true,
         }
       ]

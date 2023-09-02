@@ -8,7 +8,7 @@
             :key="slide"
         >
             <img
-                src=""
+                :src="slide"
                 alt="картинка слайдера"
                 class="app-carousel__image"
                 width="300"
@@ -51,27 +51,6 @@ export default {
                 wrapAround: true,
             },
         };
-    },
-
-    setup() {
-        const sliderImages = [
-            {
-                id: 0,
-                path: 'bfg2000'
-            },
-            {
-                id: 1,
-                path: 'bfg2000'
-            },
-            {
-                id: 2,
-                path: 'bfg2000'
-            }
-        ]
-
-        return {
-            sliderImages,
-        }
     },
 }
 </script>

@@ -1,0 +1,19 @@
+.app-page-article {
+  display: flex;
+  flex-direction: column;
+  gap: 100px;
+
+  &__title {
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 46px;
+    color: var(--text, #1B1B1B);
+  }
+
+  &__sub-title {
+    font-size: 22px;
+    font-weight: 800;
+    line-height: 30px;
+    color: var(--text, #1B1B1B);
+  }
+}

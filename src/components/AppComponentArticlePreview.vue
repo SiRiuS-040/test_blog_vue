@@ -1,7 +1,7 @@
 <template>
     <ul class="article-preview">
         <AppComponentArticlePreviewItem
-            v-for="preview in componentData.data.articles"
+            v-for="preview in componentData.articles"
             :key="preview.id"
             :componentData="preview"
         />
@@ -22,13 +22,6 @@ export default {
             type: Object,
         }
     },
-    setup( ){
-
-        return {
-
-        }
-    },
-
 }
 </script>
 

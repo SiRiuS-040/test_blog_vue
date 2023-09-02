@@ -1,18 +1,18 @@
 <template>
-    <div class="subscription">
-        <h2 class="subscription__title">
+    <div class="app-subscription">
+        <h2 class="app-subscription__title">
             Подпишись на рассылку
         </h2>
-        <div class="subscription__actions">
+        <div class="app-subscription__actions">
             <UiInput
                 type="text"
                 placeholder="Email"
-                class="subscription__input"
+                class="app-subscription__input"
             />
             <UiButton
                 @click.prevent="subscribeSubmit"
                 buttonType="basic"
-                class="subscription__button"
+                class="app-subscription__button"
             >
                 <template #desc>
                     Подписаться
@@ -33,6 +33,11 @@ export default {
         UiButton,
         UiInput
     },
+    props: {
+        componentData: {
+            type: String,
+        }
+    },
     setup() {
         const subscribeSubmit = () => {
             console.log('Подписка')
@@ -46,5 +51,5 @@ export default {
 </script>
 
 <style lang="scss">
-    @import "../components/styles/appComponentSubscription/app-component-subscription";
+    @import "../components/styles/appComponentSubscription/app-subscription";
 </style>

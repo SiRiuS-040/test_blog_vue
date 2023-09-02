@@ -1,7 +1,7 @@
 <template>
     <div class="app-form">
         <div class="app-form__image-wrapper">
-            <img src="" alt="Изображение на форме обратной связи" class="app-form__image">
+            <img src="../assets/img/cta-form-image.jpg" alt="Изображение на форме обратной связи" class="app-form__image">
         </div>
         <form class="app-form__form">
             <h3 class="app-form__title">
@@ -41,7 +41,6 @@
 
 import UiButton from "@/components/UiButton";
 import UiInput from "@/components/UiInput";
-// import {useRoute} from "vue-router";
 
 export default {
     name: "AppComponentForm",
@@ -49,10 +48,15 @@ export default {
         UiButton,
         UiInput
     },
+    props: {
+        componentData: {
+            type: String,
+        }
+    },
 
     setup() {
         const formSubmit = () => {
-            console.log('Присоединиться - потправка формы')
+            console.log('Присоединиться - отправка формы')
         }
 
         return {

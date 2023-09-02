@@ -3,7 +3,7 @@
         <AppHeader/>
         <AppMain>
             <template #mainContent>
-                <PageArticleItem />
+                <PageArticle />
             </template>
         </AppMain>
         <AppFooter/>
@@ -14,5 +14,5 @@
     import AppHeader from "../components/AppHeader.vue";
     import AppMain from "../components/AppMain.vue";
     import AppFooter from "../components/AppFooter.vue";
-    import PageArticleItem from "../components/PageArticleItem.vue";
+    import PageArticle from "../components/PageArticle.vue";
 </script>

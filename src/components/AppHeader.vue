@@ -16,16 +16,6 @@
                     </svg>
                 </router-link>
             </div>
-            <nav class="app-header__navigation navigation">
-                <ul class="navigation__list">
-                    <li class="navigation__item">
-                        <router-link to="/" class="navigation__link">Главная</router-link>
-                    </li>
-                    <li class="navigation__item">
-                        <router-link to="/article-3" class="navigation__link">Статьи</router-link>
-                    </li>
-                </ul>
-            </nav>
         </div>
     </header>
 </template>
@@ -34,14 +24,6 @@
 
 export default {
     name: "AppHeader",
-    components: {
-    },
-
-    setup() {
-        return {
-
-        }
-    },
 }
 </script>
 
