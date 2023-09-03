@@ -1,14 +1,21 @@
 <template>
     <div
-        v-if="isPageDataLoaded"
-        class="app-page-article"
+        v-if="!isLoading"
     >
-        <component
-            v-for="componentData in appPageData.body"
-            :is="componentName[componentData.type]"
-            :componentData="componentData"
-            :key="componentData.id"
+        <AppPlug404
+            v-if="is404Plug"
         />
+        <div
+            v-if="isPageDataLoaded"
+            class="app-page-article"
+        >
+            <component
+                v-for="componentData in appPageData.body"
+                :is="componentName[componentData.type]"
+                :componentData="componentData"
+                :key="componentData.id"
+            />
+        </div>
     </div>
 </template>
 
@@ -25,6 +32,7 @@ import AppArticleSliderBlock from "./AppArticleSliderBlock.vue";
 import AppArticleListBlock from "./AppArticleListBlock.vue";
 import AppCtaFormBlock from "./AppCtaFormBlock.vue";
 import AppSubscribeFormBlock from "./AppSubscribeFormBlock.vue";
+import AppPlug404 from "./AppPlug404.vue";
 
 export default {
     name: "PageArticle",
@@ -36,17 +44,29 @@ export default {
         AppArticleListBlock,
         AppCtaFormBlock,
         AppSubscribeFormBlock,
+        AppPlug404
     },
 
     setup() {
         const isPageDataLoaded = ref(false);
+        const is404Plug = ref(false);
+        const isLoading = ref(true);
+
         const componentName = blogComponents;
         const route = useRoute();
         const articleId = route.path;
         const appPageData = ref({});
         const loadBrewMethods = async() => {
             appPageData.value = await BrewMethodsAPI.index( articleId );
-            isPageDataLoaded.value = true;
+
+            if (appPageData.value.dataEmpty === true) {
+                isPageDataLoaded.value = false;
+                is404Plug.value = true;
+                isLoading.value = false;
+            } else {
+                isPageDataLoaded.value = true;
+                isLoading.value = false;
+            }
         };
         loadBrewMethods()
 
@@ -54,6 +74,8 @@ export default {
             componentName,
             appPageData,
             isPageDataLoaded,
+            is404Plug,
+            isLoading
         }
     },
 }

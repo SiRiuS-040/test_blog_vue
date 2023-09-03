@@ -12,6 +12,11 @@ export default {
                 }else{
                     return response.json();
                 }
+            })
+            .catch(function() {
+                return {
+                    dataEmpty: true
+                }
             });
     },
 
@@ -19,7 +24,7 @@ export default {
         APISettings.headers.set('Content-Type', 'multipart/form-data');
         APISettings.headers.set('Authorization', 'Bearer '+APISettings.token);
 
-        return fetch( APISettings.baseURL + '/brew-methods', {
+        return fetch( APISettings.baseURL + '/', {
             method: 'POST',
             headers: APISettings.headers,
             body: data
