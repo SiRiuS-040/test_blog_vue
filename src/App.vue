@@ -1,7 +1,14 @@
 <template>
-    <RouterView
-        :key="route.path"
-    />
+        <RouterView
+            v-slot="{ Component }"
+            :key="route.path"
+        >
+            <Transition>
+                <component
+                    :is="Component"
+                />
+            </Transition>
+        </RouterView>
 </template>
 
 <script setup>
@@ -11,4 +18,6 @@ const route = useRoute();
 
 </script>
 
-<style></style>
+<style lang="scss">
+    //@import "../src/assets/variables";
+</style>

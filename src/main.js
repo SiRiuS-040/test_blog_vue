@@ -8,7 +8,3 @@ const app = createApp(App)
 app.use(router)
 app.use(print)
 app.mount('#app')
-
-// const authGuard = router.beforeEach((to, from, next) => {
-//     next(false)
-// })

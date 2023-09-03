@@ -3,7 +3,7 @@
         <img
             :src="componentData.image"
             class="article-preview-item__preview-image"
-            alt="Изображение превью заметки" height="320"
+            alt="Изображение превью заметки" height="320" width="200"
         >
         <h2 class="article-preview-item__title">
             {{ componentData.title }}
@@ -36,6 +36,7 @@ export default
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+    @import "../assets/variables";
     @import "../components/styles/appComponentArticlePreviewItem/article-preview-item";
 </style>

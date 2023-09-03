@@ -1,34 +1,51 @@
 .app-subscription {
-  padding: 27px 30px;
+  padding: 20px;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
   color: var(--white);
   border-radius: 2px;
   background: var(--text, #1B1B1B);
 
+  @media (min-width: $tablet-width) {
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 27px 30px;
+  }
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+    align-items: center;
+  }
+
   &__title {
-    font-size: 22px;
-    font-style: normal;
+    font-size: 18px;
+    line-height: 24px;
     font-weight: 800;
-    line-height: 30px;
     width: fit-content;
+
+    @media (min-width: $tablet-width) {
+      font-size: 22px;
+      line-height: 30px;
+    }
   }
 
   &__actions {
-    display: flex;
-    gap: 37px;
-  }
+    display: grid;
+    grid-template-columns: 1fr;
+    flex-direction: column;
+    grid-gap: 25px;
+    margin-top: 16px;
 
-  &__input {
-    width: 353px;
-    background-color: transparent;
-    padding: 18px 8px 2px 8px;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 26px;
-    border-bottom: 1px solid var(--footer-subscribe-input-border, #8D959C);
-    color: var(--footer-subscribe-input-text, #8D959C);
+    @media (min-width: $tablet-width) {
+      margin-top: 20px;
+      grid-template-columns: auto auto;
+      justify-content: space-between;
+    }
+
+    @media (min-width: $desktop-width) {
+      margin-top: 0;
+      grid-gap: 37px;
+    }
   }
 }

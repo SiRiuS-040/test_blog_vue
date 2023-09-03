@@ -56,5 +56,6 @@ export default {
 </script>
 
 <style lang="scss">
+    @import "../assets/variables";
     @import "../components/styles/appComponentCarousel/app-carousel";
 </style>

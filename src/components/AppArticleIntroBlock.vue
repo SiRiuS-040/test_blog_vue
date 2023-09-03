@@ -50,6 +50,8 @@
 
 <script>
 
+import {ref} from "vue";
+
 export default {
     name: "AppArticleIntroBlock",
     components: {
@@ -59,9 +61,19 @@ export default {
             type: Object,
         }
     },
+
+    setup() {
+        const show = ref(false);
+
+
+        return {
+            show,
+        }
+    },
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+    @import "../assets/variables";
     @import "../components/styles/appArticleIntroBlock/article_intro_block";
 </style>

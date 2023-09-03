@@ -3,7 +3,9 @@
         <AppHeader/>
         <AppMain>
             <template #mainContent>
-                <PageArticle />
+                <Transition>
+                    <PageArticle />
+                </Transition>
             </template>
         </AppMain>
         <AppFooter/>

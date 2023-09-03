@@ -46,6 +46,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+    @import "../assets/variables";
     @import "./styles/uiButton/ui-button";
 </style>

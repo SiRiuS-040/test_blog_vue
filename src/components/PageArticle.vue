@@ -60,5 +60,6 @@ export default {
 </script>
 
 <style lang="scss">
+    @import "../assets/variables";
     @import "../components/styles/pageArticle/app-page-article";
 </style>

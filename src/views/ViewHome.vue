@@ -1,9 +1,11 @@
 <template>
-    <div class="app-body">
+        <div class="app-body">
         <AppHeader/>
         <AppMain>
             <template #mainContent>
-                <PageHome/>
+                <Transition>
+                    <PageHome/>
+                </Transition>
             </template>
         </AppMain>
         <AppFooter/>

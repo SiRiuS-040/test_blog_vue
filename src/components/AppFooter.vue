@@ -89,5 +89,6 @@ export default {
 </script>
 
 <style lang="scss">
+    @import "../assets/variables";
     @import "../components/styles/appFooter/app-footer";
 </style>

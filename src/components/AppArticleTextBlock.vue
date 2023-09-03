@@ -20,5 +20,6 @@ export default {
 </script>
 
 <style lang="scss">
+    @import "../assets/variables";
     @import "../components/styles/appArticleTextBlock/article-text-block";
 </style>

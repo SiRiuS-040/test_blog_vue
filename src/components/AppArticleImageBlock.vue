@@ -30,6 +30,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+    @import "../assets/variables";
     @import "../components/styles/appArticleImageBlock/article-image-block";
 </style>

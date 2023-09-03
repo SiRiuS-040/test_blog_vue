@@ -1,26 +1,69 @@
+$tablet-width: 768px;
+$desktop-width: 1360px;
+
 :root {
   --black: #1B1B1B;
   --white: #FFFFFF;
+  --blue: #3657D3;
 
   --text: #1B1B1B;
   --text-special: #8D959C;
   --footer-text-color: #8D959C;
 
+  --text-base-font-size: 14px;
+  --text-base-line-height: 18px;
+
+  --text-mail-font-size: 18px;
+  --text-mail-line-height: 22px;
+
+  --text-title-font-size: 28px;
+  --text-title-line-height: 34px;
+
+  --text-sub-title-font-size: 24px;
+  --text-sub-title-line-height: 28px;
 
   --footer-border-color: #8D959C;
   --footer-subscribe-input-text: #8D959C;
   --footer-subscribe-input-border: #8D959C;
   --footer-subscribe-button: #3657D3;
+
+  @media (min-width: $tablet-width) {
+    --text-base-font-size: 18px;
+    --text-base-line-height: 26px;
+
+    --text-mail-font-size: 18px;
+    --text-mail-line-height: 22px;
+  }
+
+  @media (min-width: $desktop-width) {
+    --text-base-font-size: 18px;
+    --text-base-line-height: 26px;
+
+    --text-mail-font-size: 18px;
+    --text-mail-line-height: 22px;
+
+    --text-title-font-size: 56px;
+    --text-title-line-height: 66px;
+
+    --text-sub-title-font-size: 34px;
+    --text-sub-title-line-height: 46px;
+  }
+}
+
+html {
+  overflow-y: scroll;
 }
 
 .app-body {
-  min-width: 960px;
   margin: 0;
   padding: 0;
 
   transition: color 0.5s, background-color 0.5s;
-  line-height: 1.2;
   font-family: Montserrat, sans-serif;
+
+  font-size: var(--text-base-font-size, 18px);
+  line-height: var(--text-base-line-height, 26px);
+  font-style: normal;
   font-weight: 400;
 
   text-rendering: optimizeLegibility;
@@ -32,12 +75,22 @@
   display: grid;
   grid-template-rows: auto 1fr auto;
   min-height: 100vh;
+  min-width: 320px;
 }
 
 .container {
   margin: 0 auto;
   padding: 0 10px;
-  width: 1340px;
+  width: auto;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 1340px;
+    padding: 0 10px;
+  }
 }
 
 .visually-hidden {
@@ -52,11 +105,23 @@ body::-webkit-scrollbar {
   width: 1em;
 }
 
-body::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+body::-webkit-scrollbar-thumb {
+  background-color: lightgray;
+  opacity: 0.5;
 }
 
-body::-webkit-scrollbar-thumb {
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
+.test-block {
+  height: 300px;
+  width: 300px;
+  background: red;
+}
+
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
 }

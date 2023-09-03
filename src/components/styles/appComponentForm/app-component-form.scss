@@ -1,10 +1,21 @@
 .app-form {
-  padding: 60px;
+  padding: 20px;
   background-color: var(--text, #1B1B1B);
 
   display: grid;
-  grid-template-columns: 595px 1fr;
-  grid-gap: 60px;
+  grid-template-columns: 1fr;
+  grid-gap: 20px;
+
+  @media (min-width: $tablet-width) {
+    padding: 60px;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 40px;
+  }
+
+  @media (min-width: $desktop-width) {
+    grid-template-columns: 595px 1fr;
+    grid-gap: 60px;
+  }
 
   &__image-wrapper {
     background: lightgray 50% / cover no-repeat;
@@ -17,21 +28,46 @@
   }
 
   &__title {
-    font-size: 34px;
+    font-size: 24px;
+    line-height: 28px;
     font-weight: 800;
-    line-height: 46px;
     color: var(--White, #FEFEFE);
+
+    @media (min-width: $tablet-width) {
+      font-size: 34px;
+      line-height: 46px;
+    }
+
+    @media (min-width: $desktop-width) {
+
+    }
   }
 
   &__form {
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+
+    @media (min-width: $tablet-width) {
+      grid-gap: 30px;
+    }
+
+    @media (min-width: $desktop-width) {
+      grid-gap: 50px;
+    }
   }
 
   &__inputs {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 16px;
+
+    @media (min-width: $tablet-width) {
+
+    }
+
+    @media (min-width: $desktop-width) {
+      grid-gap: 25px;
+    }
   }
 }

@@ -3,7 +3,6 @@
   padding: 10px;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
   background: var(--white);
 
   &:hover {
@@ -14,9 +13,7 @@
   &__preview-image {
     background: lightgray 50% / cover no-repeat;
     object-fit: cover;
-    height: 320px;
-    width: auto;
-
+    width: 100%;
   }
 
   &__title {
@@ -27,7 +24,6 @@
     font-weight: 800;
     line-height: 30px;
     overflow: hidden;
-    color: var(--text, #1B1B1B);
     text-overflow: ellipsis;
   }
 
@@ -42,6 +38,15 @@
     width: fit-content;
     color: var(--white, #FFFFFF);
     border-radius: 2px;
-    background: var(--text, #1B1B1B);
+    background-color: var(--text, #1B1B1B);
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: var(--blue, #3657D3);
+    }
+
+    &:focus-visible {
+      background-color: var(--blue, #3657D3);
+    }
   }
 }

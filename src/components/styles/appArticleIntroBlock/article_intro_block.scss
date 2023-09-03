@@ -1,35 +1,71 @@
 .article_intro_block {
   &__wrapper {
     display: grid;
-    grid-template-columns: 541px 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 30px;
-    min-height: 580px;
+
+    @media (min-width: $tablet-width) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @media (min-width: $desktop-width) {
+      grid-template-columns: 541px 1fr;
+      min-height: 580px;
+    }
+  }
+
+  &__content {
+    order: 1;
+
+    @media (min-width: $tablet-width) {
+      order: 2;
+    }
   }
 
   &__image-wrapper {
-    height: 580px;
     background: lightgray 50% / cover no-repeat;
-    border-radius: 2px 220px 2px 2px;
+    border-radius: 2px 100px 2px 2px;
     overflow: hidden;
+    order: 2;
+
+    @media (min-width: $tablet-width) {
+      border-radius: 2px 200px 2px 2px;
+      height: 500px;
+      order: 1;
+    }
+
+    @media (min-width: $desktop-width) {
+      height: auto;
+      border-radius: 2px 220px 2px 2px;
+    }
   }
 
   &__image {
-    //height: 100%;
-    //width: 100%;
+    height: 100%;
+    width: 100%;
     object-fit: cover;
   }
 
   &__content {
-    padding-bottom: 20px;
-    padding-top: 20px;
+    padding-bottom: 0;
+    padding-top: 0;
+
+    @media (min-width: $tablet-width) {
+      padding-bottom: 20px;
+      padding-top: 20px;
+    }
   }
 
   &__title {
-    margin-top: 70px;
-    font-size: 56px;
+    font-size: var(--text-title-font-size, 24px);
     font-weight: 800;
-    line-height: 66px;
-    color: var(--text, #1B1B1B);
+    line-height: var(--text-title-line-height, 30px);
+
+    @media (min-width: $desktop-width) {
+      margin-top: 70px;
+      font-size: var(--text-title-font-size, 56px);
+      line-height: var(--text-title-line-height, 66px);
+    }
   }
 
   &__statistic {
@@ -43,16 +79,16 @@
     gap: 8px;
     align-items: center;
     justify-content: flex-start;
-
     font-size: 14px;
     line-height: 20px;
     color: var(--text-special, #8D959C);
   }
 
   &__desc {
-    margin-top: 50px;
-    font-size: 18px;
-    line-height: 26px;
-    color: var(--text, #1B1B1B);
+    margin-top: 20px;
+
+    @media (min-width: $tablet-width) {
+      margin-top: 50px;
+    }
   }
 }

@@ -1,5 +1,13 @@
 .article-list-block {
   &__list {
-    margin-top: 50px;
+    margin-top: 20px;
+
+    @media (min-width: $tablet-width) {
+      margin-top: 30px;
+    }
+
+    @media (min-width: $desktop-width) {
+      margin-top: 50px;
+    }
   }
 }

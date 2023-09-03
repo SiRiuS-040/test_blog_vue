@@ -22,6 +22,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
+    @import "../assets/variables";
     @import "../components/styles/appCtaFormBlock/app-cta-form-block";
 </style>
