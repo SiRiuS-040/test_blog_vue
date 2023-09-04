@@ -1,5 +1,6 @@
 .app-page {
   height: 100%;
+
   &__content {
     display: flex;
     flex-direction: column;
@@ -12,12 +13,5 @@
     @media (min-width: $desktop-width) {
       gap: 100px;
     }
-  }
-
-  &__title {
-    font-size: var(--text-sub-title-font-size, 20px);
-    line-height: var(--text-sub-title-line-height, 24px);
-    font-weight: 800;
-    color: var(--text, #1B1B1B);
   }
 }

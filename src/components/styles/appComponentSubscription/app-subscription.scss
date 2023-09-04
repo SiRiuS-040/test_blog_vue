@@ -10,7 +10,7 @@
   @media (min-width: $tablet-width) {
     flex-direction: column;
     justify-content: space-between;
-    padding: 27px 30px;
+    padding: 35px 30px;
   }
 
   @media (min-width: $desktop-width) {
@@ -39,7 +39,7 @@
 
     @media (min-width: $tablet-width) {
       margin-top: 20px;
-      grid-template-columns: auto auto;
+      grid-template-columns: 353px auto;
       justify-content: space-between;
     }
 

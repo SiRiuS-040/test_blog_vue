@@ -1,4 +1,8 @@
-.article_intro_block {
+.article-intro-block {
+  @media (min-width: $tablet-width) {
+    margin-top: 20px;
+  }
+
   &__wrapper {
     display: grid;
     grid-template-columns: 1fr;
@@ -11,14 +15,6 @@
     @media (min-width: $desktop-width) {
       grid-template-columns: 541px 1fr;
       min-height: 580px;
-    }
-  }
-
-  &__content {
-    order: 1;
-
-    @media (min-width: $tablet-width) {
-      order: 2;
     }
   }
 
@@ -49,10 +45,11 @@
   &__content {
     padding-bottom: 0;
     padding-top: 0;
+    order: 1;
 
     @media (min-width: $tablet-width) {
+      order: 2;
       padding-bottom: 20px;
-      padding-top: 20px;
     }
   }
 
@@ -62,7 +59,7 @@
     line-height: var(--text-title-line-height, 30px);
 
     @media (min-width: $desktop-width) {
-      margin-top: 70px;
+      margin-top: 90px;
       font-size: var(--text-title-font-size, 56px);
       line-height: var(--text-title-line-height, 66px);
     }
