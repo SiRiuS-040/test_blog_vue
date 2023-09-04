@@ -7,12 +7,10 @@ section(class="article-intro-block")
             h2(class="article-intro-block__title") {{ componentData.data.title }}
             div(class="article-intro-block__statistic")
                 p(class="article-intro-block__statistic-item")
-                    svg(width="16px", height="16px")
-                        use(xlink:href="../assets/img//icons/icon-clock.svg#iconClock")
+                    img(src="../assets/img/icons/icon-time.svg" alt="Иконка статистики Время" width="16" height="16")
                     span {{ componentData.data['reading_time'] }} мин время чтения
                 p(class="article-intro-block__statistic-item")
-                    svg(width="16px", height="16px")
-                        use(xlink:href="../assets/img//icons/icon-eye.svg#iconEye")
+                    img(src="../assets/img/icons/icon-eye.svg" alt="Иконка статистики Просмотры" width="16" height="16")
                     span {{ componentData.data['views_count'] }} прочитали статью
             p(class="article-intro-block__desc") {{ componentData.data['short_description'] }}
 </template>
