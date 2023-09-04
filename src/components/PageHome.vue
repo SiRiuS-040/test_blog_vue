@@ -1,13 +1,14 @@
 <template>
     <div
         v-if="!isLoading"
+        class="app-page"
     >
         <AppPlug404
             v-if="is404Plug"
         />
         <section
             v-if="isPageDataLoaded"
-            class="app-page-home"
+            class="app-page__content"
         >
             <component
                 v-for="componentData in appPageData.body"
@@ -21,11 +22,11 @@
 
 <script>
 
-import { ref } from "vue"
 import { blogComponents } from "./features/blogComponents";
-import BrewMethodsAPI from '../components/api/resources/BrewMethods.js';
 import AppArticleListBlock from "./AppArticleListBlock.vue";
 import AppPlug404 from "./AppPlug404.vue";
+import {useRoute} from "vue-router";
+import {useApi} from "@/components/features/useApi";
 
 export default {
     name: "PageHome",
@@ -36,31 +37,20 @@ export default {
     },
 
     setup( ){
-        const is404Plug = ref(false)
-        const isPageDataLoaded = ref(false)
-        const isLoading = ref(true)
-
+        const route = useRoute();
+        const pagePath = route.path;
         const componentName = blogComponents;
-        const pagePath = '/';
-        const appPageData = ref({});
-        const loadBrewMethods = async() => {
-            appPageData.value = await BrewMethodsAPI.index( pagePath );
 
-            if (appPageData.value.dataEmpty === true) {
-                isPageDataLoaded.value = false;
-                is404Plug.value = true;
-                isLoading.value = false;
-            } else {
-                isPageDataLoaded.value = true;
-                isLoading.value = false;
-            }
-        };
-        loadBrewMethods()
+        const {
+            appPageData,
+            isPageDataLoaded,
+            is404Plug,
+            isLoading,
+        } = useApi(pagePath)
 
         return {
             componentName,
             appPageData,
-            loadBrewMethods,
             isPageDataLoaded,
             is404Plug,
             isLoading,

@@ -2,7 +2,7 @@
     <section class="article-list-block">
         <h2
             v-if="!isHomePage"
-            class="app-page-article__title"
+            class="app-page__title"
         >
             {{ componentData.data.title }}
         </h2>
