@@ -1,6 +1,6 @@
 <template lang="pug">
 section(class="article-list-block")
-    h2(v-if="!isHomePage" class="article-list-block__title")
+    h2(v-if="!isHomePage" class="article-list-block__title") {{ componentData.data.title }}
     AppComponentArticlePreview(:componentData="componentData.data" class="article-list-block__list")
 </template>
 
