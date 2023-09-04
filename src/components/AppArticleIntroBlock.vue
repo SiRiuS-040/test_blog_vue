@@ -13,7 +13,7 @@ section(class="article-intro-block")
                 p(class="article-intro-block__statistic-item")
                     svg(width="16px", height="16px")
                         use(xlink:href="../assets/img//icons/icon-eye.svg#iconEye")
-                    span {{ componentData.data['reading_time'] }} мин время чтения
+                    span {{ componentData.data['views_count'] }} прочитали статью
             p(class="article-intro-block__desc") {{ componentData.data['short_description'] }}
 </template>
 
