@@ -1,10 +1,6 @@
-<template>
-    <section class="article-text-block">
-        <div v-html="componentData.data"
-             class="article-text-block__content"
-        >
-        </div>
-    </section>
+<template lang="pug">
+section(class="article-text-block")
+    div(v-html="componentData.data" class="article-text-block__content")
 </template>
 
 <script>

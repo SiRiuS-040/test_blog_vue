@@ -1,17 +1,8 @@
-<template>
-    <button
-        class="ui-button"
-        :class="uiButtonClasses"
-    >
-        <img
-            v-if="icon"
-            :src="require(`../assets/img/icons/icon-${icon}.svg`)"
-            class="ui-button__icon"
-        >
-        <span class="ui-button__desc">
-            <slot name="desc"></slot>
-        </span>
-    </button>
+<template lang="pug">
+button(class="ui-button" :class="uiButtonClasses")
+    img(v-if="icon" :src="require(`../assets/img/icons/icon-${icon}.svg`)" class="ui-button__icon")
+    span(class="ui-button__desc")
+        slot(name="desc")
 </template>
 
 <script>

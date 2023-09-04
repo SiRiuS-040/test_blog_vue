@@ -1,9 +1,6 @@
-<template>
-    <input
-        :type="type"
-        :placeholder="placeholder"
-        class="ui-input"
-    />
+<template lang="pug">
+input(:type="type" :placeholder="placeholder" class="ui-input")
+
 </template>
 
 <script>

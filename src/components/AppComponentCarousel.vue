@@ -1,25 +1,10 @@
-<template>
-    <carousel
-        v-bind="settings"
-        class="app-carousel"
-    >
-        <slide
-            v-for="slide in slides"
-            :key="slide"
-        >
-            <img
-                :src="slide"
-                alt="картинка слайдера"
-                class="app-carousel__image"
-                width="300"
-                height="200"
-            >
-        </slide>
-        <template #addons>
-            <navigation />
-            <pagination />
-        </template>
-    </carousel>
+<template lang="pug">
+carousel(v-bind="settings" class="app-carousel")
+    slide(v-for="slide in slides" :key="slide")
+        img(:src="slide" alt="картинка слайдера" class="app-carousel__image" width="300" height="200")
+    template(#addons)
+        navigation
+        pagination
 </template>
 
 <script>

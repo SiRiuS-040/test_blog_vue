@@ -1,20 +1,8 @@
-<template>
-    <li class="article-preview-item">
-        <img
-            :src="componentData.image"
-            class="article-preview-item__preview-image"
-            alt="Изображение превью заметки" height="320" width="200"
-        >
-        <h2 class="article-preview-item__title">
-            {{ componentData.title }}
-        </h2>
-        <router-link
-            :to="componentData.link"
-            class="article-preview-item__link"
-        >
-            Читать
-        </router-link>
-    </li>
+<template lang="pug">
+li(class="article-preview-item")
+    img(:src="componentData.image" class="article-preview-item__preview-image" alt="Изображение превью заметки" height="320" width="200")
+    h2(class="article-preview-item__title") {{ componentData.title }}
+    router-link(:to="componentData.link" class="article-preview-item__link") Читать
 </template>
 <script>
 

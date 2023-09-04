@@ -1,9 +1,6 @@
-<template>
-    <section class="app-cta-form-block">
-        <AppComponentForm
-            :componentData="componentData.data"
-        />
-    </section>
+<template lang="pug">
+section(class="app-cta-form-block")
+    AppComponentForm(:componentData="componentData.data")
 </template>
 
 <script>

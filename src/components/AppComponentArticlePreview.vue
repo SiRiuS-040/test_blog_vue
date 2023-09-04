@@ -1,11 +1,6 @@
-<template>
-    <ul class="article-preview">
-        <AppComponentArticlePreviewItem
-            v-for="preview in componentData.articles"
-            :key="preview.id"
-            :componentData="preview"
-        />
-    </ul>
+<template lang="pug">
+ul(class="article-preview")
+    AppComponentArticlePreviewItem(v-for="preview in componentData.articles" :key="preview.id" :componentData="preview")
 </template>
 
 <script>

@@ -1,23 +1,8 @@
-<template>
-    <div
-        v-if="!isLoading"
-        class="app-page"
-    >
-        <AppPlug404
-            v-if="is404Plug"
-        />
-        <section
-            v-if="isPageDataLoaded"
-            class="app-page__content"
-        >
-            <component
-                v-for="componentData in appPageData.body"
-                :is="componentName[componentData.type]"
-                :componentData="componentData"
-                :key="componentData.id"
-            />
-        </section>
-    </div>
+<template lang="pug">
+div(v-if="!isLoading" class="app-page")
+    AppPlug404(v-if="is404Plug")
+    section(v-if="isPageDataLoaded" class="app-page__content")
+        component(v-for="componentData in appPageData.body" :is="componentName[componentData.type]" :componentData="componentData" :key="componentData.id")
 </template>
 
 <script>

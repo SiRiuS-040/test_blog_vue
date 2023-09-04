@@ -1,9 +1,7 @@
-<template>
-    <main class="app-main">
-        <div class="app-main__content container">
-            <slot name="mainContent"></slot>
-        </div>
-    </main>
+<template lang="pug">
+main(class="app-main")
+    div(class="app-main__content container")
+        slot(name="mainContent")
 </template>
 
 <script>

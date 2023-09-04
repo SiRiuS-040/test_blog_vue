@@ -1,16 +1,7 @@
-<template>
-    <section class="article-list-block">
-        <h2
-            v-if="!isHomePage"
-            class="article-list-block__title"
-        >
-            {{ componentData.data.title }}
-        </h2>
-        <AppComponentArticlePreview
-            :componentData="componentData.data"
-            class="article-list-block__list"
-        />
-    </section>
+<template lang="pug">
+section(class="article-list-block")
+    h2(v-if="!isHomePage" class="article-list-block__title")
+    AppComponentArticlePreview(:componentData="componentData.data" class="article-list-block__list")
 </template>
 
 <script>

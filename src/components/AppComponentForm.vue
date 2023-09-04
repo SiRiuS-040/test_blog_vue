@@ -1,40 +1,15 @@
-<template>
-    <div class="app-form">
-        <div class="app-form__image-wrapper">
-            <img src="../assets/img/cta-form-image.jpg" alt="Изображение на форме обратной связи" class="app-form__image">
-        </div>
-        <form class="app-form__form">
-            <h3 class="app-form__title">
-                Стань участником проекта
-            </h3>
-            <div class="app-form__inputs">
-                <UiInput
-                    type="text"
-                    placeholder="Имя"
-                    class="app-form__input"
-                />
-                <UiInput
-                    type="tel"
-                    placeholder="Телефон"
-                    class="app-form__input"
-                />
-                <UiInput
-                    type="email"
-                    placeholder="Email"
-                    class="app-form__input"
-                />
-            </div>
-            <UiButton
-                @click.prevent="formSubmit"
-                buttonType="basic"
-                class="app-form__button"
-            >
-                <template #desc>
-                    Присоединиться
-                </template>
-            </UiButton>
-        </form>
-    </div>
+<template lang="pug">
+div(class="app-form")
+    div(class="app-form__image-wrapper")
+        img(src="../assets/img/cta-form-image.jpg" alt="Изображение на форме обратной связи" class="app-form__image")
+    form(class="app-form__form")
+        h3(class="app-form__title") Стань участником проекта
+        div(class="app-form__inputs")
+            UiInput(type="text" placeholder="Имя" class="app-form__input")
+            UiInput(type="tel" placeholder="Телефон" class="app-form__input")
+            UiInput(type="email" placeholder="Email" class="app-form__input")
+        UiButton(@click.prevent="formSubmit" buttonType="basic" class="app-form__button")
+            template(#desc) Присоединиться
 </template>
 
 <script>

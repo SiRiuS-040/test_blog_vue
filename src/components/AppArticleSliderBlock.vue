@@ -1,9 +1,6 @@
-<template>
-    <section class="article-slider-block">
-        <AppComponentCarousel
-            :slides="componentData.data"
-        />
-    </section>
+<template lang="pug">
+section(class="article-slider-block")
+    AppComponentCarousel(:slides="componentData.data")
 </template>
 
 <script>
